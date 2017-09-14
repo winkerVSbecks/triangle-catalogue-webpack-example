@@ -25,15 +25,15 @@ module.exports = {
     // These are the reasonable defaults supported by the Node ecosystem.
     extensions: ['.js', '.json', '.jsx'],
   },
-  performance: {
-    hints: 'warning', // enum
-    maxAssetSize: 200000, // int (in bytes),
-    maxEntrypointSize: 400000, // int (in bytes)
-    assetFilter: function(assetFilename) {
-      // Function predicate that provides asset filenames
-      return assetFilename.endsWith('.css') || assetFilename.endsWith('.js');
-    },
-  },
+  // performance: {
+  //   hints: 'warning', // enum
+  //   maxAssetSize: 200000, // int (in bytes),
+  //   maxEntrypointSize: 400000, // int (in bytes)
+  //   assetFilter: function(assetFilename) {
+  //     // Function predicate that provides asset filenames
+  //     return assetFilename.endsWith('.css') || assetFilename.endsWith('.js');
+  //   },
+  // },
   module: {
     rules: [
       {
@@ -132,23 +132,23 @@ module.exports = {
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
     }),
     // Minify the code.
-    new webpack.optimize.UglifyJsPlugin({
-      compress: {
-        warnings: false,
-        // Disabled because of an issue with Uglify breaking seemingly valid code:
-        // https://github.com/facebookincubator/create-react-app/issues/2376
-        // Pending further investigation:
-        // https://github.com/mishoo/UglifyJS2/issues/2011
-        comparisons: false,
-      },
-      output: {
-        comments: false,
-        // Turned on because emoji and regex is not minified properly using default
-        // https://github.com/facebookincubator/create-react-app/issues/2488
-        ascii_only: true,
-      },
-      sourceMap: showSourceMap,
-    }),
+    // new webpack.optimize.UglifyJsPlugin({
+    //   compress: {
+    //     warnings: false,
+    //     // Disabled because of an issue with Uglify breaking seemingly valid code:
+    //     // https://github.com/facebookincubator/create-react-app/issues/2376
+    //     // Pending further investigation:
+    //     // https://github.com/mishoo/UglifyJS2/issues/2011
+    //     comparisons: false,
+    //   },
+    //   output: {
+    //     comments: false,
+    //     // Turned on because emoji and regex is not minified properly using default
+    //     // https://github.com/facebookincubator/create-react-app/issues/2488
+    //     ascii_only: true,
+    //   },
+    //   sourceMap: showSourceMap,
+    // }),
     // Note: this won't work without ExtractTextPlugin.extract(..) in `loaders`.
     new ExtractTextPlugin({
       filename: '[name].[contenthash:8].css',

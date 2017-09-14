@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import { asyncComponent } from './asyncComponent';
-import 'App.css';
+import { Navbar } from './components/Navbar';
+import { Intro } from './components/Intro';
 
-console.log('‹HELLO!›');
+export const dec = state => ({ index: state.index - 1 });
+export const inc = state => ({ index: state.index + 1 });
+export const toggleXRay = state => ({ xray: !state.xray });
 
-const AsyncTriangle = asyncComponent(() => import('./Triangle'));
-
-class App extends Component {
+export class App extends Component {
   constructor(props) {
     super(props);
 
@@ -15,31 +15,35 @@ class App extends Component {
     };
   }
 
+  componentDidMount() {
+    const { update } = this.props;
+    document.body.addEventListener('keydown', e => {
+      if (document.activeElement.tagName !== 'BODY') return;
+      switch (e.key) {
+        case 'ArrowLeft':
+          update(dec);
+          break;
+        case 'ArrowRight':
+          update(inc);
+          break;
+        default:
+          break;
+      }
+    });
+  }
+
   render() {
     return (
-      <div>
-        <div className="sans-serif measure mt5 pa4 center hero mb5">
-          <div>
-            <h2>Welcome to React</h2>
-          </div>
-          <p>
-            To get started, edit <code>src/App.js</code> and save to reload.
-          </p>
-          <p>
-            <button
-              className="pa3 f6 ttu tracked bg-light-green bn pointer fw6 grow"
-              onClick={() => {
-                this.setState(() => ({ showAsync: true }));
-              }}
-            >
-              Load Async Component
-            </button>
-          </p>
-        </div>
-        {this.state.showAsync ? <AsyncTriangle /> : null}
+      <div className="black-pearl vh-100 sans-serif mw8 center ph3 ph0-l flex flex-column">
+        <Navbar
+          onLeft={() => console.log('left')}
+          onRight={() => console.log('right')}
+        />
+
+        <main className="flex-auto flex">
+          <Intro />
+        </main>
       </div>
     );
   }
 }
-
-export default App;
