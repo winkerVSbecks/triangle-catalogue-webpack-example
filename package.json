@@ -38,9 +38,17 @@
     "start": "NODE_ENV=development webpack-dev-server --progress",
     "prebuild": "rm -rf build",
     "build": "NODE_ENV=production webpack --progress",
-    "test": "node scripts/test.js --env=jsdom"
+    "test": "node scripts/test.js --env=jsdom",
+    "bundle-buddy": "bundle-buddy build/*.map",
+    "preanalyze": "NODE_ENV=production webpack --profile --json > stats.json",
+    "analyze": "webpack-bundle-analyzer stats.json",
+    "webpack-defaults": "webpack-defaults"
   },
   "babel": {
     "presets": ["react-app"]
+  },
+  "devDependencies": {
+    "bundle-buddy": "^0.1.2",
+    "webpack-bundle-analyzer": "^2.9.0"
   }
 }
