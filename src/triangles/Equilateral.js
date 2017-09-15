@@ -6,7 +6,7 @@ const Equilateral = ({ onLeft, onRight }) => (
     <div className="flex-auto">
       <Triangle
         className="mw6 mr6-l"
-        polarCoords={[[20, -120], [30, -210], [30, -330]]}
+        polarCoords={[[30, -120], [30, -210], [30, -330]]}
       />
     </div>
     <div className="measure">

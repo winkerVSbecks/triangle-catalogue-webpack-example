@@ -6,7 +6,7 @@ import triangles from './triangles';
 
 export class App extends Component {
   state = {
-    index: 4,
+    index: -1,
   };
 
   componentDidMount() {

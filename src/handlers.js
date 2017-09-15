@@ -6,7 +6,7 @@ export const dec = state => {
 };
 
 export const inc = state => {
-  if (state.index < 9) {
+  if (state.index < 8) {
     return { index: state.index + 1 };
   }
   return state;
