@@ -1,3 +1,5 @@
+import React from 'react';
+
 /**
  * Classifying triangles by their angles
  * + Acute triangles
