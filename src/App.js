@@ -3,11 +3,10 @@ import { Navbar } from './components/Navbar';
 import { Intro } from './components/Intro';
 import { dec, inc, handleKeyDown } from './handlers';
 import triangles from './triangles';
-// import { Triangle } from './components/Triangle';
 
 export class App extends Component {
   state = {
-    index: -1,
+    index: 4,
   };
 
   componentDidMount() {

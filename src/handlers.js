@@ -12,10 +12,8 @@ export const inc = state => {
   return state;
 };
 
-export const toggleXRay = state => ({ xray: !state.xray });
-
 export const handleKeyDown = e => {
-  if (document.activeElement.tagName !== 'BODY') return;
+  if (document.activeElement.tagName !== 'BODY') return {};
   switch (e.key) {
     case 'ArrowLeft':
       return dec;

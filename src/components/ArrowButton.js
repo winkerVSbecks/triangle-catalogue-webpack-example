@@ -22,7 +22,7 @@ export const ArrowButton = ({
   ...props
 }) => (
   <button
-    className="di justify-center ma0 pa3 bg-transparent bn pointer"
+    className="di flex items-center justify-center ma0 pa3 bg-transparent bn pointer"
     {...props}
   >
     <svg
@@ -33,7 +33,7 @@ export const ArrowButton = ({
       fill="none"
       stroke="currentcolor"
       strokeWidth="3"
-      className={`did v-mid overflow-visible ${color}`}
+      className={`di v-mid overflow-visible ${color}`}
     >
       {right ? arrows.right : arrows.left}
     </svg>

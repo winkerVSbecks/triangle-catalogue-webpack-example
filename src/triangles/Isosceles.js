@@ -1,7 +1,7 @@
 import React from 'react';
 import { Triangle } from '../components/Triangle';
 
-const Isosceles = ({ onLeft, onRight }) => (
+const Isosceles = () => (
   <article className="flex-l justify-center items-start w-100">
     <div className="flex-auto">
       <Triangle className="mw6 mr6-l" coords={[[30, 5], [10, 55], [50, 55]]} />

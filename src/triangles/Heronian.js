@@ -1,7 +1,7 @@
 import React from 'react';
 import { Triangle } from '../components/Triangle';
 
-const Heronian = ({ onLeft, onRight }) => (
+const Heronian = () => (
   <article className="flex-l justify-center items-start w-100">
     <div className="flex-auto">
       <Triangle

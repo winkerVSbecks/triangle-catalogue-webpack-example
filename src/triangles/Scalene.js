@@ -1,7 +1,7 @@
 import React from 'react';
 import { Triangle } from '../components/Triangle';
 
-const Scalene = ({ onLeft, onRight }) => (
+const Scalene = () => (
   <article className="flex-l justify-center items-start w-100">
     <div className="flex-auto">
       <Triangle className="mw6 mr6-l" coords={[[5, 5], [20, 50], [55, 50]]} />

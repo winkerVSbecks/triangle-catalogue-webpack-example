@@ -1,12 +1,12 @@
 import React from 'react';
 import { Triangle } from '../components/Triangle';
 
-const Equilateral = ({ onLeft, onRight }) => (
+const Equilateral = () => (
   <article className="flex-l justify-center items-start w-100">
     <div className="flex-auto">
       <Triangle
         className="mw6 mr6-l"
-        polarCoords={[[30, -120], [30, -210], [30, -330]]}
+        polarCoords={[[25, -90], [25, -210], [25, -330]]}
       />
     </div>
     <div className="measure">

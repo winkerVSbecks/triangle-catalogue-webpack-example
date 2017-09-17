@@ -1,7 +1,7 @@
 import React from 'react';
 import { Triangle } from '../components/Triangle';
 
-const AlmostEquilateralHeronian = ({ onLeft, onRight }) => (
+const AlmostEquilateralHeronian = () => (
   <article className="flex-l justify-center items-start w-100">
     <div className="flex-auto">
       <Triangle className="mw6 mr6-l" coords={[[45, 5], [15, 45], [45, 45]]} />

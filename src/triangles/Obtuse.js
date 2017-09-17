@@ -1,7 +1,7 @@
 import React from 'react';
 import { Triangle } from '../components/Triangle';
 
-const Obtuse = ({ onLeft, onRight }) => (
+const Obtuse = () => (
   <article className="flex-l justify-center items-start w-100">
     <div className="flex-auto">
       <Triangle
