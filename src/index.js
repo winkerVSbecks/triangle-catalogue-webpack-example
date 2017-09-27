@@ -1,7 +1,14 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import 'tachyons';
-import './index.css';
-import { App } from './App';
+import { area } from './math';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const baseEl = document.getElementById('base');
+const heightEl = document.getElementById('height');
+const calculateEl = document.getElementById('calculate');
+const resultEl = document.getElementById('result');
+
+calculateEl.onclick = function() {
+  const base = baseEl.value;
+  const height = heightEl.value;
+  const result = area(base, height);
+
+  resultEl.innerText = result;
+};
