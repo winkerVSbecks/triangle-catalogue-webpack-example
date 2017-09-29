@@ -11,21 +11,27 @@
       You need to enable JavaScript to run this app.
     </noscript>
 
-    <div id="result"></div>
+    <p>
+      <div>
+        <label for="base">Base</label>
+        <input id="base" type="number">
+      </div>
+      <div>
+        <label for="height">Height</label>
+        <input id="height" type="number">
+      </div>
 
-    <div>
-      <label for="base">Base</label>
-      <input id="base" type="number">
-    </div>
-    <div>
-      <label for="height">Height</label>
-      <input id="height" type="number">
-    </div>
+      <p>
+        <button type="button" id="calculate">
+          Calculate
+        </button>
+      </p>
+    </p>
 
-    <button type="button" id="calculate">
-      Calculate
-    </button>
+    <p>
+      Area is: <span id="result"></span>
+    </p>
 
-    <script src="build/main.js" />
+    <script src="bundle.js"></script>
   </body>
 </html>

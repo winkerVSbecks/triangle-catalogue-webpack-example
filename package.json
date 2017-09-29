@@ -2,6 +2,11 @@
   "name": "triangle-catalogue",
   "version": "0.1.0",
   "private": true,
+  "scripts": {
+    "start":
+      "webpack-dev-server --content-base public --config webpack.config.js",
+    "build": "webpack --config webpack.config.js"
+  },
   "dependencies": {
     "autoprefixer": "7.1.2",
     "babel-core": "6.25.0",
@@ -33,16 +38,5 @@
     "webpack": "3.5.1",
     "webpack-dev-server": "2.7.1",
     "whatwg-fetch": "2.0.3"
-  },
-  "scripts": {
-    "prebuild": "rm -rf build",
-    "build": "NODE_ENV=production webpack --config webpack.config.js"
-  },
-  "babel": {
-    "presets": ["react-app"]
-  },
-  "devDependencies": {
-    "bundle-buddy": "^0.1.2",
-    "webpack-bundle-analyzer": "^2.9.0"
   }
 }
