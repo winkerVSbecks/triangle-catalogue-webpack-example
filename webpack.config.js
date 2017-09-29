@@ -1,11 +1,12 @@
 const autoprefixer = require('autoprefixer');
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: './src/index.js',
   output: {
-    filename: 'bundle.js',
-    path: path.resolve(__dirname, 'public'),
+    filename: '[name].[chunkhash:8].js',
+    path: path.resolve(__dirname, 'build'),
   },
   module: {
     rules: [
@@ -47,4 +48,10 @@ module.exports = {
       },
     ],
   },
+  plugins: [
+    new HtmlWebpackPlugin({
+      inject: true,
+      template: './public/index.html',
+    }),
+  ],
 };
