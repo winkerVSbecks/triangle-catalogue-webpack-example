@@ -2,6 +2,7 @@ const autoprefixer = require('autoprefixer');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const webpack = require('webpack');
 
 module.exports = {
   devtool: 'source-map',
@@ -60,6 +61,11 @@ module.exports = {
     }),
     new ExtractTextPlugin({
       filename: '[name].[contenthash:8].css',
+    }),
+    new webpack.optimize.CommonsChunkPlugin({
+      children: true,
+      minChunks: 2,
+      async: true,
     }),
   ],
 };
