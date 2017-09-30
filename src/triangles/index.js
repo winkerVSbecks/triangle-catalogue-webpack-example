@@ -12,9 +12,7 @@ export default [
     import(/* webpackChunkName: "isosceles" */ './Isosceles'),
   ),
   asyncComponent(() => import(/* webpackChunkName: "scalene" */ './Scalene')),
-  asyncComponent(() =>
-    import(/* webpackChunkName: "pythagorean-triple" */ './Heronian'),
-  ),
+  asyncComponent(() => import(/* webpackChunkName: "heronian" */ './Heronian')),
   asyncComponent(() =>
     import(/* webpackChunkName: "almost-equilateral-heronian" */ './AlmostEquilateralHeronian'),
   ),
