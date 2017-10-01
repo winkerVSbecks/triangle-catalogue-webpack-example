@@ -36,14 +36,6 @@ module.exports = {
   },
   module: {
     rules: [
-      {
-        test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
-        loader: 'url-loader',
-        options: {
-          limit: 5000, // 10000,
-          name: '[name].[hash:8].[ext]',
-        },
-      },
       // babel config in package.json
       {
         test: /\.(js|jsx)$/,
@@ -53,40 +45,6 @@ module.exports = {
           compact: true,
         },
       },
-      // {
-      //   test: /\.css$/,
-      //   use: [
-      //     'style-loader',
-      //     {
-      //       loader: 'css-loader',
-      //       options: {
-      //         importLoaders: 1,
-      //         minimize: true,
-      //         sourceMap: showSourceMap,
-      //       },
-      //     },
-      //     {
-      //       loader: 'postcss-loader',
-      //       options: {
-      //         // Necessary for external CSS imports to work
-      //         // https://github.com/facebookincubator/create-react-app/issues/2677
-      //         ident: 'postcss',
-      //         plugins: () => [
-      //           require('postcss-flexbugs-fixes'),
-      //           autoprefixer({
-      //             browsers: [
-      //               '>1%',
-      //               'last 4 versions',
-      //               'Firefox ESR',
-      //               'not ie < 9', // React doesn't support IE8 anyway
-      //             ],
-      //             flexbox: 'no-2009',
-      //           }),
-      //         ],
-      //       },
-      //     },
-      //   ],
-      // },
       {
         test: /\.css$/,
         loader: ExtractTextPlugin.extract({
@@ -165,24 +123,24 @@ module.exports = {
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
     }),
-    // Minify the code.
-    // new webpack.optimize.UglifyJsPlugin({
-    //   compress: {
-    //     warnings: false,
-    //     // Disabled because of an issue with Uglify breaking seemingly valid code:
-    //     // https://github.com/facebookincubator/create-react-app/issues/2376
-    //     // Pending further investigation:
-    //     // https://github.com/mishoo/UglifyJS2/issues/2011
-    //     comparisons: false,
-    //   },
-    //   output: {
-    //     comments: false,
-    //     // Turned on because emoji and regex is not minified properly using default
-    //     // https://github.com/facebookincubator/create-react-app/issues/2488
-    //     ascii_only: true,
-    //   },
-    //   sourceMap: showSourceMap,
-    // }),
+    // Minify the code
+    new webpack.optimize.UglifyJsPlugin({
+      compress: {
+        warnings: false,
+        // Disabled because of an issue with Uglify breaking seemingly valid code:
+        // https://github.com/facebookincubator/create-react-app/issues/2376
+        // Pending further investigation:
+        // https://github.com/mishoo/UglifyJS2/issues/2011
+        comparisons: false,
+      },
+      output: {
+        comments: false,
+        // Turned on because emoji and regex is not minified properly using default
+        // https://github.com/facebookincubator/create-react-app/issues/2488
+        ascii_only: true,
+      },
+      sourceMap: showSourceMap,
+    }),
     // Note: this won't work without ExtractTextPlugin.extract(..) in `loaders`.
     new ExtractTextPlugin({
       filename: '[name].[contenthash:8].css',
