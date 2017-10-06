@@ -6,6 +6,9 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const showSourceMap = true;
 
+// This is a stripped-down version of the setup
+// that is provided in create-react-app
+// Most of the comments come from the original create-react-app codebase
 module.exports = {
   bail: true,
   devtool: showSourceMap ? 'source-map' : false,
