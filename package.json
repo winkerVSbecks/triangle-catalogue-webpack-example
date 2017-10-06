@@ -41,6 +41,7 @@
     "build": "NODE_ENV=production webpack --config webpack.config.js",
     "preanalyze": "NODE_ENV=development webpack --profile --json > stats.json",
     "analyze": "webpack-bundle-analyzer stats.json",
+    "prebuddy": "npm run build",
     "buddy": "bundle-buddy build/*.map"
   },
   "babel": {
