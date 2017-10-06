@@ -16,10 +16,13 @@ export default [
     import(/* webpackChunkName: "pythagorean-triple" */ './Heronian'),
   ),
   asyncComponent(() =>
-    import(/* webpackChunkName: "almost-equilateral-heronian" */ './AlmostEquilateralHeronian'),
+    import(/* webpackChunkName: "ae-heronian" */ './AlmostEquilateralHeronian'),
   ),
 ];
 
+/**
+ * Static imports (no code-splitting)
+ */
 // import Right from './Right';
 // import Acute from './Acute';
 // import Obtuse from './Obtuse';
