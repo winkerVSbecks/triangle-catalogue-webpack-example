@@ -14,6 +14,6 @@ export default [
   asyncComponent(() => import(/* webpackChunkName: "scalene" */ './Scalene')),
   asyncComponent(() => import(/* webpackChunkName: "heronian" */ './Heronian')),
   asyncComponent(() =>
-    import(/* webpackChunkName: "almost-equilateral-heronian" */ './AlmostEquilateralHeronian'),
+    import(/* webpackChunkName: "ae-heronian" */ './AlmostEquilateralHeronian'),
   ),
 ];
