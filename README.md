@@ -7,7 +7,7 @@ Demo project for my "Slaying Your Webpack Dragon" talk at CSS DevConf. Slides ar
 
 + **1-hello-world:** webpack hello world
 + **2-loaders:** triangle catalogue with loaders
-+ **3-plugins:** Html Webpack Plugin
++ **3-plugins:** separating the source code from distribution code using html-webpack-plugin
 + **4-extract-text-plugin:** extract CSS using extract-text-webpack-plugin
 + **5-analyze:** analyze using webpack-bundle-analyzer
 + **6-code-splitting:** implement code splitting
