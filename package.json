@@ -5,7 +5,7 @@
   "scripts": {
     "start":
       "webpack-dev-server --content-base public --config webpack.config.js",
-    "prebuild": "rm -rf public/bundle.js",
+    "prebuild": "rm -rf public/bundle.js public/*.svg",
     "build": "webpack --config webpack.config.js"
   },
   "dependencies": {
